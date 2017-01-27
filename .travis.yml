@@ -3,7 +3,7 @@ sudo: required
 python:
 - '2.7'
 install: pip install -r requirements.txt
-script: echo \"TODO\"
+script: echo DOES_IT_WORK
 deploy:
   provider: lambda
   function_name: lambda-test
@@ -11,3 +11,4 @@ deploy:
   handler_name: lambda_function.lambda_handler
   access_key_id: ACCESS_KEY_ID
   secret_access_key: SECRET_ACCESS_KEY
+  region: us-east-1
