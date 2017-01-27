@@ -87,3 +87,70 @@ ENV/
 
 # Rope project settings
 .ropeproject
+
+
+Skip to content
+This repository
+Search
+Pull requests
+Issues
+Gist
+ @Jenniferstrej
+ Watch 1,956
+  Star 45,702
+ Fork 18,814 github/gitignore
+ Code  Pull requests 190  Projects 0  Pulse  Graphs
+Branch: master Find file Copy pathgitignore/Global/JetBrains.gitignore
+2229768  on Oct 29, 2016
+@exarus exarus Updated Jetbrains.gitignore
+20 contributors @thunsaker @samskiter @LazarusX @arcresu @victorhaggqvist @tsteinholz @ssinss @exarus @rocketraman @RobertoNovelo @petermorlion @jturmel @yatskevich @GingerGeek @Fuhrmann @ergl @drothmaler @Nainterceptor @cemmersb @shiftkey
+RawBlameHistory     
+43 lines (32 sloc)  858 Bytes
+# Covers JetBrains IDEs: IntelliJ, RubyMine, PhpStorm, AppCode, PyCharm, CLion, Android Studio and Webstorm
+# Reference: https://intellij-support.jetbrains.com/hc/en-us/articles/206544839
+
+# User-specific stuff:
+.idea/workspace.xml
+.idea/tasks.xml
+
+# Sensitive or high-churn files:
+.idea/dataSources/
+.idea/dataSources.ids
+.idea/dataSources.xml
+.idea/dataSources.local.xml
+.idea/sqlDataSources.xml
+.idea/dynamic.xml
+.idea/uiDesigner.xml
+
+# Gradle:
+.idea/gradle.xml
+.idea/libraries
+
+# Mongo Explorer plugin:
+.idea/mongoSettings.xml
+
+## File-based project format:
+*.iws
+
+## Plugin-specific files:
+
+# IntelliJ
+/out/
+
+# mpeltonen/sbt-idea plugin
+.idea_modules/
+
+# JIRA plugin
+atlassian-ide-plugin.xml
+
+# Crashlytics plugin (for Android Studio and IntelliJ)
+com_crashlytics_export_strings.xml
+crashlytics.properties
+crashlytics-build.properties
+fabric.properties
+Contact GitHub API Training Shop Blog About
+© 2017 GitHub, Inc. Terms Privacy Security Status Help
+
+###
+
+.DS_Store
