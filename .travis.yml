@@ -9,6 +9,6 @@ deploy:
   function_name: lambda-test
   role: arn:aws:iam::109549055893:role/backwardtestLambdaTravis
   handler_name: lambda_function.lambda_handler
-  access_key_id: ACCESS_KEY_ID
-  secret_access_key: SECRET_ACCESS_KEY
+  access_key_id: $ACCESS_KEY_ID
+  secret_access_key: $SECRET_ACCESS_KEY
   region: us-east-1
