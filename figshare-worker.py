@@ -3,7 +3,7 @@ from __future__ import print_function
 import base64
 import json
 
-print('Loading function !')
+print('Loading function NEW!')
 
 
 def lambda_handler(event, context):
