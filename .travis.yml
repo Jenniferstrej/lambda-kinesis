@@ -2,7 +2,8 @@ language: python
 sudo: required
 python:
 - '2.7'
-before_install: - chmod +x gradlew
+before_install:
+  - chmod +x gradlew
 install: ./travis-install.sh
 script: echo "$DOES_IT_WORK"
 deploy:
