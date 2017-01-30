@@ -12,4 +12,4 @@ def lambda_handler(event, context):
         # Kinesis data is base64 encoded so decode here
         payload = base64.b64decode(record['kinesis']['data'])
         print("Decoded payload: " + payload)
-    return 'Successfully processed {} records.'.format(len(event['Records']))
+    return 'Successfully processed {} records. Testing...'.format(len(event['Records']))
