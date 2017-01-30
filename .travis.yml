@@ -2,7 +2,9 @@ language: python
 sudo: required
 python:
 - '2.7'
-install: travis-install.sh
+before_install:
+  - chmod +x ./travis-install.sh
+install: ./travis-install.sh
 script: echo "$DOES_IT_WORK"
 deploy:
   provider: lambda
