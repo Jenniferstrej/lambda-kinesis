@@ -9,7 +9,7 @@ script: echo "$DOES_IT_WORK"
 deploy:
   provider: lambda
   function_name: "figshare-worker"
-  role: arn:aws:iam::109549055893:role/backwardtestLambdaTravis
+  role: arn:aws:iam::109549055893:role/iam_role_for_lambda
   handler_name: lambda_handler
   module_name: figshare-worker
   zip: "figshare-worker.zip"
