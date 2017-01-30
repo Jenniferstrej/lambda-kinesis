@@ -10,7 +10,7 @@ deploy:
   provider: lambda
   function_name: "figshare-worker"
   role: arn:aws:iam::109549055893:role/backwardtestLambdaTravis
-  handler_name: lambda_function.lambda_handler
+  handler_name: figshare-worker.lambda_handler
   zip: "figshare-worker.zip"
   runtime: "python2.7"
   access_key_id: "$ACCESS_KEY_ID"
