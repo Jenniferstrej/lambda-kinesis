@@ -16,6 +16,4 @@ deploy:
   runtime: "python2.7"
   access_key_id: "$ACCESS_KEY_ID"
   secret_access_key: "$SECRET_ACCESS_KEY"
-  session_token: "$SESSION_TOKEN"
-  security_token: "$SECURITY_TOKEN"
   region: us-east-1
