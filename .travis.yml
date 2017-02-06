@@ -3,8 +3,8 @@ sudo: required
 python:
 - '2.7'
 before_install:
-  - chmod +x ./travis-install.sh
-install: ./travis-install.sh
+  - chmod +x ./ci-package.sh
+install: ./ci-package.sh
 script: echo "$DOES_IT_WORK"
 deploy:
   provider: lambda

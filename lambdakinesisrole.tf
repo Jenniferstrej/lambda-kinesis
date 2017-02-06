@@ -1,6 +1,6 @@
-resource "aws_iam_role_policy" "lambda_policy" {
-    name = "test_policy"
-	role = "${aws_iam_role.iam_role_for_lambda.id}"
+resource "aws_iam_policy" "policy" {
+    name = "lambda_kinesis_policy"
+	description = "Policy for dev-ci user to use lambda"
 	policy = <<EOF
 {
     "Version": "2012-10-17",
@@ -9,6 +9,7 @@ resource "aws_iam_role_policy" "lambda_policy" {
             "Sid": "Stmt1485448841000",
             "Effect": "Allow",
             "Action": [
+                "lambda:ListFunctions",
                 "lambda:CreateFunction",
                 "lambda:UpdateFunctionCode",
                 "lambda:UpdateFunctionConfiguration",
@@ -36,27 +37,46 @@ resource "aws_iam_role_policy" "lambda_policy" {
                 "logs:PutLogEvents"
             ],
             "Resource": "*"
+        },
+        {
+            "Sid": "Stmt20170203",
+            "Effect": "Allow",
+            "Action": [
+                "iam:ListAttachedRolePolicies",
+                "iam:ListRolePolicies",
+                "iam:ListRoles",
+                "iam:PassRole"
+            ],
+            "Resource": "*"
         }
 	]
 }
 EOF
 }
 
-resource "aws_iam_role" "iam_role_for_lambda" {
-    name = "iam_role_for_lambda"
-    assume_role_policy = <<EOF
+resource "aws_iam_role" "role" {
+    name = "lambda_kinesis_iam_role"
+	assume_role_policy = <<EOF
 {
-    "Version": "2012-10-17",
-    "Statement": [
-        {
-            "Sid": "",
-            "Effect": "Allow",
-            "Action": "sts:AssumeRole",
-            "Principal": {
-              "Service": "lambda.amazonaws.com"
-            }
-        }
-    ]
+	    "Version": "2012-10-17",
+		"Statement": [
+			{
+				"Sid": "",
+				"Effect": "Allow",
+				"Action": "sts:AssumeRole",
+	            "Principal": {
+	              "Service": "lambda.amazonaws.com"
+	            }
+			}
+		]
+	}
+	EOF
 }
-EOF
+
+
+resource "aws_iam_policy_attachment" "test-attachment" {
+    name = "dev-ci-attachment"
+    users = ["dev-ci"]
+	roles = ["${aws_iam_role.role.name}"]
+    policy_arn = "${aws_iam_policy.policy.arn}"
 }
