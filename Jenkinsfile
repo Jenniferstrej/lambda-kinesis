@@ -5,7 +5,7 @@ node {
     println "It started!"
 
     stage('Build') {
-        sh '- chmod +x ./ci-package.sh'
+        sh '- chmod +x ci-package.sh'
         sh('ci-package.sh')
     }
 
@@ -14,7 +14,7 @@ node {
     }
 
     stage('Deploy'){
-        sh '- chmod +x ./update-function.sh'
+        sh '- chmod +x update-function.sh'
         sh('update-function.sh')
         println "Finished deploy!"
     }
