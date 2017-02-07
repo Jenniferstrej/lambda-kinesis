@@ -7,8 +7,8 @@ node {
     stage('Build') {
         sh 'ls'
         sh 'pwd'
-        sh 'chmod +x ci-package.sh'
-        sh 'ci-package.sh'
+        sh 'chmod +x ./ci-package.sh'
+        sh './ci-package.sh'
     }
 
     stage('Test'){
