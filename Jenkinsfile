@@ -14,6 +14,8 @@ node {
     }
 
     stage('Deploy'){
+        ls
+        pwd
         sh 'chmod +x update-function.sh'
         sh('update-function.sh')
         println "Finished deploy!"
