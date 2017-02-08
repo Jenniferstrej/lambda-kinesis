@@ -16,8 +16,8 @@ node {
     }
 
     stage('Deploy'){
-        sh 'chmod +x update-function.sh'
-        sh 'update-function.sh'
+        sh 'chmod +x ./update-function.sh'
+        sh './update-function.sh'
         println "Finished deploy!"
     }
 
