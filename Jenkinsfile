@@ -2,11 +2,8 @@ node {
     checkout scm // <1>
 
     /* .. snip .. */
-    println "It started!"
 
     stage('Build') {
-        sh 'ls'
-        sh 'pwd'
         sh 'chmod +x ./ci-package.sh'
         sh './ci-package.sh'
     }
@@ -18,7 +15,6 @@ node {
     stage('Deploy'){
         sh 'chmod +x ./update-function.sh'
         sh './update-function.sh'
-        println "Finished deploy!"
     }
 
 
